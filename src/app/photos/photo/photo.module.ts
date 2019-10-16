@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PhotoComponent } from './photo.component';
-import { HttpClient } from 'selenium-webdriver/http';
+
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [PhotoComponent],
+    declarations: [ PhotoComponent ],
     imports: [
         CommonModule,
-        HttpClient
+        HttpClientModule
     ],
-    export: [PhotoComponent]
+    exports: [ PhotoComponent ]
 })
-export class PhotoModule {}
+export class PhotoModule { }

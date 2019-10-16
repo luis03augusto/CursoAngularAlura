@@ -20,4 +20,4 @@ import { CommonModule } from '@angular/common';
         CardModule
     ]
 })
-export  class PhotolistModule{}
+export  class PhotolistModule { }

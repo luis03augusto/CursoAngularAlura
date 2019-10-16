@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Photo } from './photo';
 
@@ -16,7 +16,7 @@ export class PhotoService {
     }
 
     listFromUserPaginated(userName: string, page: number) {
-        const params = new HttpClient()
+        const params = new HttpParams()
             .append('page', page.toString());
 
         return this.http

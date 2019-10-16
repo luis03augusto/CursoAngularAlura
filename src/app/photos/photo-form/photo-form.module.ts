@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 
-import { PhotoComponent } from '../photo/photo.component';
+
 import { CommonModule } from '@angular/common';
+import { PhotoFormComponent } from './photo-form.component';
 
 @NgModule({
-    declarations: [PhotoComponent],
+    declarations: [PhotoFormComponent],
     imports: [
         CommonModule
     ]
 })
-export class PhotoFormModule{}
+export class PhotoFormModule {}

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CardComponent } from './card.comoponent';
+import { CardComponent } from './card.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -7,6 +7,5 @@ import { CommonModule } from '@angular/common';
     exports: [ CardComponent ],
     imports: [ CommonModule ]
 })
-export class CardModule{
 
-}
+export class CardModule { }
