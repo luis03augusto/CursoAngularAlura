@@ -5,7 +5,7 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './erros/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list-resolver';
-import { SigInComponent } from "./home/signin/SigInComponent";
+import { SigInComponent } from './home/signin/signin.component';
 
 const routes: Routes = [
     { path: '', component: SigInComponent },
