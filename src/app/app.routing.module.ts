@@ -6,9 +6,18 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './erros/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list-resolver';
 import { SigInComponent } from './home/signin/signin.component';
+import { AuthGuard } from './core/auth/auth.guard';
 
 const routes: Routes = [
-    { path: '', component: SigInComponent },
+    { 
+        path: '', 
+        component: SigInComponent, 
+        canActivate: [ AuthGuard ]
+    },
+    { 
+        path: 'signup', 
+        component: SigInComponent,        
+    },
     { path: 'user/:userName', component: PhotoListComponent,
         resolve : {
             photos: PhotoListResolver

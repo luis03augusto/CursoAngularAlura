@@ -6,6 +6,8 @@ import { PhotosModule } from './photos/photos.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ErrosModule } from './erros/erros.module';
 import { HomeModule } from './home/home.module';
+import { VMessageModule } from './shared/components/vmesage/vmessage/vmessage.module';
+import { Coremodule } from './core/core.module';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { HomeModule } from './home/home.module';
       PhotosModule,
       AppRoutingModule,
       ErrosModule,
-      HomeModule
+      HomeModule,
+      Coremodule
    ],
    providers: [],
    bootstrap: [
