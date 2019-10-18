@@ -12,6 +12,6 @@ export class PlataformDetectorService {
   isPlataformBrowse() {
 
     return isPlatformBrowser(this.plataformId);
-    
+
   }
 }

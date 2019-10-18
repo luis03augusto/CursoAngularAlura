@@ -6,24 +6,20 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   user$: Observable<User>;
 
   constructor(private route: Router,
-              private userService: UserService) { 
+              private userService: UserService) {
     this.user$ = userService.getUser();
   }
 
   logout() {
     this.userService.logout();
     this.route.navigate(['']);
-  }
-
-  ngOnInit() {
   }
 
 }

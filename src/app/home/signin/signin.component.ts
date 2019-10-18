@@ -12,7 +12,7 @@ import { PlataformDetectorService } from 'src/app/core/plataform-detector/plataf
 export class SigInComponent implements OnInit {
 
   loginForm: FormGroup;
-  @ViewChild('userNameInput') userNameInput: ElementRef<HTMLImageElement>;
+  @ViewChild('userNameInput', {static: false}) userNameInput: ElementRef<HTMLImageElement>;
 
   constructor(
               private formBuilder: FormBuilder,
@@ -34,7 +34,7 @@ export class SigInComponent implements OnInit {
 
     this.authService.autheticate(userName, password)
     .subscribe(
-      () => this.route.navigate(['user', userName]),      
+      () => this.route.navigate(['user', userName]),
       err => {
         console.log(err);
         this.loginForm.reset();

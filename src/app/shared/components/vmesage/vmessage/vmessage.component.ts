@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-vmessage',
-  templateUrl: './vmesage.component.html'
+  templateUrl: './vmessage.component.html'
 })
 export class VmesageComponent implements OnInit {
 

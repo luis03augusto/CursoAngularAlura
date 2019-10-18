@@ -5,4 +5,4 @@ import { VmesageComponent } from './vmessage.component';
     declarations: [ VmesageComponent],
     exports: [ VmesageComponent]
 })
-export class VMessageModule {}
+export class VMessageModule { }
