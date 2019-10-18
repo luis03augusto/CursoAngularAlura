@@ -1,7 +1,7 @@
 <h4 class="text-center">Tegister to embrace a new world!</h4>
-<form [formGroup]="sigupForm" class="form mt-4">
+<form [formGroup]="sigupForm" class="form mt-4" (submit)="signup()">
   <div class="form-group">
-      <input formGroupName="email" class="form-control" placeholder="email" autofocus>      
+      <input #inputEmail formGroupName="email" class="form-control" placeholder="email" autofocus>      
         <app-vmessage *ngIf="sigupForm.get('email').errors?.required" text="Email name is required"></app-vmessage>      
         <app-vmessage *ngIf="sigupForm.get('email').errors?.email" text="invalid Email"></app-vmessage>      
   </div>
@@ -19,6 +19,9 @@
         <app-vmessage *ngIf="sigupForm.get('userName').errors?.minlength" text="Minimun length is 2"></app-vmessage>      
         <app-vmessage *ngIf="sigupForm.get('userName').errors?.maxlength" text="Maximun length is 30"></app-vmessage>      
         <app-vmessage *ngIf="sigupForm.get('userName').errors?.lowerCase" text="Must be lower case"></app-vmessage>      
+        <app-vmessage *ngIf="sigupForm.get('userName').errors?.userNameTaken" text="Username atready taken"></app-vmessage>      
+        <small *ngIf="sigupForm.get('userName').valid" class="text-success">User availabe</small>
+
   </div>
 
   <div class="form-group">
@@ -28,7 +31,7 @@
         <app-vmessage *ngIf="sigupForm.get('password').errors?.maxlength" text="Maximun length is 18"></app-vmessage>      
   </div>
 
-  <button [disabled]="sigupForm.invalid" class="btn btn-primary btn-block">Register</button>
+  <button [disabled]="sigupForm.invalid || sigupForm.pending" class="btn btn-primary btn-block">Register</button>
 
   <p>Alredy a user? <a [routerLink]="['']">Sign In!</a></p>
 </form>

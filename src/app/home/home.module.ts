@@ -5,19 +5,25 @@ import { SigInComponent } from './signin/signin.component';
 import { VMessageModule } from '../shared/components/vmesage/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { SingupComponent } from './singup/singup.component';
+import { HomeComponent } from './home.component';
+import { SingupService } from './singup/singup.service';
 
 
 @NgModule({
     declarations: [ 
         SigInComponent,
-        SingupComponent
-     ],
+        SingupComponent,
+        HomeComponent
+    ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
         VMessageModule,
         RouterModule,
         FormsModule
+    ],
+    providers: [
+        SingupService
     ]
 
 })
