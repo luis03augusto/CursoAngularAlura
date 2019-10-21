@@ -6,13 +6,13 @@ import { SigInComponent } from './signin/signin.component';
 import { SingupComponent } from './singup/singup.component';
 
 const routes: Routes = [
-    { 
-        path: '', 
-        component: HomeComponent, 
+    {
+        path: '',
+        component: HomeComponent,
         canActivate: [ AuthGuard ],
         children: [
             {
-                path: '', 
+                path: '',
                 component: SigInComponent
             },
             {
@@ -20,7 +20,7 @@ const routes: Routes = [
                 component: SingupComponent
             }
         ]
-    }   
+    }
 ];
 
 @NgModule({
