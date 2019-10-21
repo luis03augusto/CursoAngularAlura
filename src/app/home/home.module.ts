@@ -10,7 +10,7 @@ import { SingupService } from './singup/singup.service';
 
 
 @NgModule({
-    declarations: [ 
+    declarations: [
         SigInComponent,
         SingupComponent,
         HomeComponent

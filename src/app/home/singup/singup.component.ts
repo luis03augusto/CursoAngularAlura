@@ -7,35 +7,35 @@ import { SingupService } from './singup.service';
 import { Router } from '@angular/router';
 import { PlataformDetectorService } from 'src/app/core/plataform-detector/plataform-detector.service';
 
-@Component({  
+@Component({ 
   templateUrl: './singup.component.html',
   providers: [ UserNotTakenValidatorService ]
 })
 export class SingupComponent implements OnInit {
 
   sigupForm: FormGroup;
-  @ViewChild('inputEmail') inputEmail: ElementRef<HTMLInputElement>;
+  @ViewChild('inputEmail', { static: false}) inputEmail: ElementRef<HTMLInputElement>;
 
   constructor(private formBuilder: FormBuilder,
               private userNotTakenValidatorService: UserNotTakenValidatorService,
-              private route : Router,
+              private route: Router,
               private plataformDetectorservice: PlataformDetectorService,
-              private singupservice: SingupService) { }             
+              private singupservice: SingupService) { }
 
-  ngOnInit() {    
+  ngOnInit() {
     this.sigupForm = this.formBuilder.group({
       email: ['', [
-          Validators.required, 
+          Validators.required,
           Validators.email
         ]
       ],
-      fullName: ['',[
+      fullName: ['', [
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(40),
         ]
       ],
-      userName: ['',[
+      userName: ['', [
           Validators.required,
           lowercaseValidator,
           Validators.minLength(2),
@@ -43,13 +43,14 @@ export class SingupComponent implements OnInit {
         ],
         this.userNotTakenValidatorService.checkUserNameTaken()
       ],
-      password: ['',[
+      password: ['', [
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(14)
         ]
       ]
-    })   
+    });
+
     this.plataformDetectorservice.isPlataformBrowse() &&
     this.inputEmail.nativeElement.focus();
   }
@@ -58,7 +59,7 @@ export class SingupComponent implements OnInit {
     this.singupservice
       .singup(newUser)
       .subscribe(() => this.route.navigate([''])
-      ,err => console.log(err)
+      , err => console.log(err)
     );
   }
 }

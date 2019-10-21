@@ -5,6 +5,8 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './erros/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list-resolver';
+import { AuthGuard } from './core/auth/auth.guard';
+import { RequiresAuthenticationGuard } from './core/auth/required-autentication.guard';
 
 const routes: Routes = [
     {
@@ -12,16 +14,20 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: 'home'
     },
-    { 
+    {
         path: 'home',
-        loadChildren: './home/home.modele#HomeModule'        
-    },    
+        loadChildren: './home/home.modele#HomeModule'
+    },
     { path: 'user/:userName', component: PhotoListComponent,
         resolve : {
             photos: PhotoListResolver
         }
      },
-    { path: 'p/add', component: PhotoFormComponent },
+    {
+        path: 'p/add',
+        component: PhotoFormComponent,
+        canActivate: [ RequiresAuthenticationGuard ]
+    },
     { path: '**', component: NotFoundComponent }
 
 ];
