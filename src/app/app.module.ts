@@ -19,7 +19,7 @@ import { HomeRoutingModule } from './home/home.routing.module';
       ErrosModule,
       Coremodule,
       HomeRoutingModule,
-      AppRoutingModule
+      AppRoutingModule      
    ],
    providers: [],
    bootstrap: [

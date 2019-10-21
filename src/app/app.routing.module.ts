@@ -5,6 +5,7 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './erros/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list-resolver';
+import { PhotoDetailsModule } from './photos/photo-details/photo-details.module';
 
 const routes: Routes = [
     {
@@ -22,6 +23,7 @@ const routes: Routes = [
         }
      },
     { path: 'p/add', component: PhotoFormComponent },
+    { path: 'p/:photoId', component: PhotoDetailsModule },
     { path: '**', component: NotFoundComponent }
 
 ];
