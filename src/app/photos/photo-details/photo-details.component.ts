@@ -30,11 +30,11 @@ export class PhotoDetailsComponent implements OnInit {
   remove() {
     this.service.removePohto(this.photoId)
     .subscribe(() => {
-      this.alertService.success('Photo removed');
+      this.alertService.success('Photo removed', true);
       this.router.navigate(['']);
     },
     err => {
-      this.alertService.warnig('Could not delete the photo');
+      this.alertService.warnig('Could not delete the photo', true);
     })
   }
 }
