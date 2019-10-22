@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 @NgModule({
     declarations: [ ShowIfLoggedModule ],
     exports: [ ShowIfLoggedModule ],
-    imports: [ CommonModule ]
+    imports: [ CommonModule ],
+    
 })
 export class ShowIfLoggedModule { }
