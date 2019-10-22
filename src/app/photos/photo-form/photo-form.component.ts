@@ -4,6 +4,7 @@ import { PhotoService } from '../photo/photo.service';
 import { Router } from '@angular/router';
 import { subscribeOn } from 'rxjs/operators';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
+import { UserService } from 'src/app/core/user/user.service';
 
 @Component({
   selector: 'app-photo-form',
@@ -19,7 +20,8 @@ export class PhotoFormComponent implements OnInit {
   constructor(private fotBuilder: FormBuilder,
               private photoService: PhotoService,
               private route: Router,
-              private alertServie: AlertService
+              private alertServie: AlertService,
+              private userService: UserService
               ) { }
 
   ngOnInit() {
@@ -35,8 +37,8 @@ export class PhotoFormComponent implements OnInit {
     const allowComments = this.photoForm.get('allowComments').value;
     this.photoService.upload(description, allowComments, this.file)
     .subscribe(() => {
-      this.alertServie.success('Uplpoad complete');
-      this.route.navigate(['']);
+      this.alertServie.success('Uplpoad complete', true);
+      this.route.navigate(['/user', this.userService.getUserName()]);
       });
 
   }

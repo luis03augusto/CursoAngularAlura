@@ -21,7 +21,7 @@ export class AlertService {
           }
         }
       });
-     }
+    }
 
     success(message: string, keepAfterRouterChange: boolean = false) {
       this.alert(AlertType.SUCCESS, message, keepAfterRouterChange);

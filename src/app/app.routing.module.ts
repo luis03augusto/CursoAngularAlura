@@ -31,7 +31,8 @@ const routes: Routes = [
         component: PhotoFormComponent,
         canActivate: [ RequiresAuthenticationGuard ]
     },
-    { path: '**', component: NotFoundComponent }
+    { path: 'not-found', component: NotFoundComponent },
+    { path: '**', redirectTo: 'not-found' }
 
 ];
 
